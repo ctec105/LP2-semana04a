@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>LP2-semana04a</display-name>
+  <!-- Definimos cual es nuestra pagina de bienvenida tenemos varias candidatas -->
+  <welcome-file-list>
+    <welcome-file>logueo.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+ 
+  <!-- Registramos el servlet LogueServlet.java -->
+  <servlet>
+    <description></description>
+    <display-name>LogueoServlet</display-name>
+    <servlet-name>LogueoServlet</servlet-name>
+    <servlet-class>aprendamos.servlets.LogueoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogueoServlet</servlet-name>
+    <url-pattern>/logueo</url-pattern>
+    <url-pattern>/sisepuede</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Configurar el tiempo de inactividad de la sesión -->
+  <session-config>
+    <session-timeout>20</session-timeout>
+  </session-config>
+  
+  <!-- Registramos nuestro segundo servlet ListadoServlet.java -->
+  <servlet>
+    <description></description>
+    <display-name>ListadoServlet</display-name>
+    <servlet-name>ListadoServlet</servlet-name>
+    <servlet-class>aprendamos.servlets.ListadoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListadoServlet</servlet-name>
+    <url-pattern>/ListadoServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
